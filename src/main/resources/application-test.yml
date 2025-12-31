@@ -1,0 +1,5 @@
+spring:
+  kafka:
+    # No need to set `bootstrap-servers` in the test profile; `@EmbeddedKafka` provides it.
+    consumer:
+      auto-offset-reset: earliest

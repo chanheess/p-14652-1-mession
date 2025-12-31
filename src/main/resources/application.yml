@@ -1,0 +1,29 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: back
+  config:
+    import: optional:file:.env[.properties]
+  profiles:
+    active: dev
+  output:
+    ansi:
+      enabled: always
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+  kafka:
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JacksonJsonSerializer
+      properties:
+        spring.json.add.type.headers: true
+    consumer:
+      group-id: back
+      value-deserializer: org.springframework.kafka.support.serializer.JacksonJsonDeserializer
+      properties:
+        spring.json.trusted.packages: com.back.*
+        spring.json.use.type.headers: true
+logging:
+  level:
+    com.back: DEBUG
