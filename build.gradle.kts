@@ -30,6 +30,7 @@ dependencies {
     implementation("org.apache.kafka:kafka-streams")
 
     developmentOnly("org.springframework.boot:spring-boot-devtools")
+    runtimeOnly("org.springframework.boot:spring-boot-docker-compose")
 
     compileOnly("org.projectlombok:lombok")
     testCompileOnly("org.projectlombok:lombok")

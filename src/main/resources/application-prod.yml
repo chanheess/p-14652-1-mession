@@ -1,0 +1,5 @@
+spring:
+  kafka:
+    bootstrap-servers: NEED_TO_SET_LATER:19092
+    consumer:
+      auto-offset-reset: latest
